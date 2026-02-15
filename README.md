@@ -1,16 +1,49 @@
-# React + Vite
+HEKTO
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+HEKTO is a role-based e-commerce web application built using the MERN stack. It allows buyers to browse and purchase products, while admins can manage users, products, banners, and monitor orders and revenue.
 
-Currently, two official plugins are available:
+This project demonstrates full-stack development with role-based access control, REST APIs, and cloud integration.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Features:
+Buyer Role
+Browse and search products.
+View product details.
+Add products to cart and manage cart items.
+Place orders.
 
-## React Compiler
+Admin Role:
+Manage users (view, update, delete).
+Manage products and banners (Create, Read, Update, Delete — CRUD operations).
+View orders and track revenue.
+Full administrative control of the platform.
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+Frontend:
+React.js – Modern, component-based UI library
+React Router DOM – Client-side routing with protected routes
+React Toastify – Elegant notifications and alerts
+useFetch – Fetching data from REST APIs efficiently
+Redux / Context API – State management 
+Styled Components / Tailwind CSS / CSS Modules – Responsive and modern styling
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Backend:
+Node.js & Express.js – Scalable server-side framework
+MongoDB & Mongoose – NoSQL database with schema modeling
+RESTful APIs – CRUD operations and data management
+JWT Authentication – Secure user authentication and role-based access control
+Nodemailer – Email notifications for users and admins
+Multer + Cloudinary – File uploads and cloud storage for product images and banners
+Bcrypt.js – Password hashing for secure authentication
+Cors & Helmet – Security and cross-origin support
+
+Dev Tools & Best Practices:
+ESLint & Prettier – Code linting and formatting
+Postman / Insomnia – API testing
+Git & GitHub – Version control and collaboration
+dotenv – Environment variable management
+npm scripts / Concurrently – Efficient development workflow
+
+Contact
+Developer: Samar Maharjan
+Location: Lalitpur, Nepal
+Email: samarmhrzn257@gmail.com
