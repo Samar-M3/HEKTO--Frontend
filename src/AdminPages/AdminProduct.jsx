@@ -78,10 +78,7 @@ function AdminProduct() {
     columnhelper.accessor("updatedAt", {
       header: "Last Updated",
     }),
-    columnhelper.accessor((row) => row.category?.title || "—", {
-      id: "category",
-      header: "Category",
-    }),
+ 
     columnhelper.display({
       id: "action",
       header: "ACTION",

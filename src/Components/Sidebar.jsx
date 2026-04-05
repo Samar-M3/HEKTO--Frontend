@@ -23,16 +23,7 @@ const menuItem = [
     icon: PiFlagBannerBold,
     path: "/dashboard/banner",
   },
-  {
-    title:"Order",
-    icon:RiOrderPlayLine,
-    path:"/dashboard/order"
-  },
-  {
-    title:"Payment",
-    icon:MdPayment,
-    path:"/dashboard/payment"
-  },
+
 ];
 
 function Sidebar() {
