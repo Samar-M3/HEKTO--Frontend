@@ -13,6 +13,7 @@ import sale3 from "../images/sale3.jpg";
 import { FaFacebook, FaFacebookF } from "react-icons/fa6";
 import { CiInstagram } from "react-icons/ci";
 import SmartImage from "../Components/SmartImage";
+import BaseUrl from "../constant";
 // import sale4 from "../images/sale4.jpg"
 const recenetpost = [
   {
@@ -58,7 +59,7 @@ function Blog() {
   const [error, seterror] = useState();
   const fetchData = async () => {
     try {
-      const res = await fetch("http://localhost:8000/api/v1/blog");
+      const res = await fetch(`${BaseUrl}api/v1/blog`);
       if (res.ok) {
         const data = await res.json();
         setblog(data.data);

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import CreateBanner from "./CreateBanner";
-import useFetch from "../hooks/UseFetch";
+import useFetch from "../hooks/usefetch";
 import { toast } from "react-toastify";
+import BaseUrl from "../constant";
 import {
   createColumnHelper,
   flexRender,
@@ -15,13 +16,13 @@ function AdminBanner() {
   const [banners, setbanner] = useState([]);
   const [editingdata, setEditingBanner] = useState(null);
   const {data, loading, error} = useFetch(
-    "http://localhost:8000/api/v1/banner",
+    `${BaseUrl}api/v1/banner`,
     []
   );
   const handleDelete = async (id) => {
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch(`http://localhost:8000/api/v1/banner/${id}`, {
+      const res = await fetch(`${BaseUrl}api/v1/banner/${id}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,

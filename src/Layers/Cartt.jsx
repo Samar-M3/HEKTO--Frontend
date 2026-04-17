@@ -4,6 +4,7 @@ import BreadCrumb from "../hooks/BreadCrumb";
 import { toast } from "react-toastify";
   import { loadStripe } from "@stripe/stripe-js";
 import SmartImage from "../Components/SmartImage";
+import BaseUrl from "../constant";
 
 function Cartt() {
   const { cart, removecart, updateQuantity } = usecart();
@@ -23,7 +24,7 @@ const stripePromise = loadStripe("pk_test_51SvBGALxl7yKMmldvUawcaVJU0UWUZd9e89Fh
 const handleCheckout = async () => {
   const stripe = await stripePromise;
 
-  const response = await fetch("http://localhost:8000/api/v1/payment", {
+  const response = await fetch(`${BaseUrl}api/v1/payment`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

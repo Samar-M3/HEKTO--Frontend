@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { toast } from "react-toastify";
+import BaseUrl from "../constant";
 
 function CreateProduct({ onClose, onProductCreated, editingdata }) {
   const [image, setimage] = useState(null);
@@ -10,7 +11,7 @@ function CreateProduct({ onClose, onProductCreated, editingdata }) {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const res = await fetch("http://localhost:8000/api/v1/category");
+        const res = await fetch(`${BaseUrl}api/v1/category`);
         const data = await res.json();
 
         if (!res.ok) throw new Error("Failed to load categories");
@@ -125,8 +126,8 @@ function CreateProduct({ onClose, onProductCreated, editingdata }) {
     const token = localStorage.getItem("token");
 
     const url = editingdata
-      ? `http://localhost:8000/api/v1/product/${editingdata._id}`
-      : "http://localhost:8000/api/v1/product";
+      ? `${BaseUrl}api/v1/product/${editingdata._id}`
+      : `${BaseUrl}api/v1/product`;
 
     const method = editingdata ? "PATCH" : "POST";
 

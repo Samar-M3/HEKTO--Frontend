@@ -6,22 +6,23 @@ import {
   getCoreRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import useFetch from "../hooks/UseFetch";
+import useFetch from "../hooks/usefetch";
 import { FaEdit, FaTrash } from "react-icons/fa";
 import { toast } from "react-toastify";
+import BaseUrl from "../constant";
 
 function AdminProduct() {
   const [open, setopen] = useState(false);
   const [products, setproduct] = useState([]);
   const [editingdata, setEditingProduct] = useState(null);
   const { data, loading, error } = useFetch(
-    "http://localhost:8000/api/v1/product",
+    `${BaseUrl}api/v1/product`,
     []
   );
   const handleDelete = async (id) => {
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch(`http://localhost:8000/api/v1/product/${id}`, {
+      const res = await fetch(`${BaseUrl}api/v1/product/${id}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,

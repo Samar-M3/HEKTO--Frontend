@@ -5,7 +5,6 @@ import { FaFacebook } from "react-icons/fa";
 import { BsInstagram, BsTwitter } from "react-icons/bs";
 import { BiHeart } from "react-icons/bi";
 import { usecart } from "../hooks/CartContext";
-import axios from "axios";
 import { toast } from "react-toastify";
 import SmartImage from "../Components/SmartImage";
 

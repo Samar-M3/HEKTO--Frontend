@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import BaseUrl from "../constant";
 
 export default function Profile() {
   const [user, setUser] = useState(null);
@@ -7,7 +8,7 @@ export default function Profile() {
   useEffect(() => {
     const token = localStorage.getItem("token");
 
-    fetch("http://localhost:8000/api/v1/users/profile", {
+    fetch(`${BaseUrl}api/v1/users/profile`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

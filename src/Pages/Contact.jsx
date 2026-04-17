@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import frontdesk from "../images/frontdesk.png"
+import BaseUrl from "../constant";
 
 function Contact() {
    const [form, setForm] = useState({
@@ -17,7 +18,7 @@ function Contact() {
     e.preventDefault();
 
     try {
-      const res = await fetch("http://localhost:8000/send-mail", {
+      const res = await fetch(`${BaseUrl}send-mail`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),

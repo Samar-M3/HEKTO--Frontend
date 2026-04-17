@@ -6,11 +6,12 @@ import {
   useReactTable,
   getCoreRowModel,
 } from "@tanstack/react-table";
-import useFetch from "../hooks/UseFetch";
+import useFetch from "../hooks/usefetch";
+import BaseUrl from "../constant";
 
 function User() {
   const { data, loading, error } = useFetch(
-    "http://localhost:8000/api/v1/users",
+    `${BaseUrl}api/v1/users`,
     {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
