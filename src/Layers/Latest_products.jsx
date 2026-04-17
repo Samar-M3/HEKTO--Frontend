@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router";
 import cartlogo from "../images/cartLogo.png";
 import BaseUrl from "../constant";
+import SmartImage from "../Components/SmartImage";
 
 const Latest_products_nav = [
   { name: "New Arrival", code: "newArrival" },
@@ -64,7 +65,15 @@ useEffect(() => {
                 onMouseLeave={() => setHoveredIndex(null)}
               >
                 <div className="bg-[#F7F7F7] h-[269.96px] flex justify-center hover:bg-white hover:">
-                  <img className="h-[267.9px] " src={el.image} alt="" />
+                  <SmartImage
+                    className="h-[267.9px] "
+                    src={el.image}
+                    alt=""
+                    width={360}
+                    height={268}
+                    crop="fit"
+                    loading="lazy"
+                  />
                 </div> 
                 <div className="flex gap-23 mt-2">
                   <p>{el.title}</p>

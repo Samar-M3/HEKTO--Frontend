@@ -5,6 +5,7 @@ import Slider from "react-slick";
 import lightimg from "../images/LightTop.png";
 import BaseUrl from "../constant"
 import { Link } from "react-router";
+import SmartImage from "./SmartImage";
 // console.log(BaseUrl);
 
 function Banner() {
@@ -49,7 +50,7 @@ console.log("this is banner data",bannerdata)
       <Slider {...settings} >
       
       { 
-        bannerdata.map((el)=>{
+        bannerdata.map((el, index)=>{
             return (        
               <div className="h-[75vh]">
               <div className="flex items-center gap-7 justify-center relative bg-[#F2F0FF] h-full w-full">
@@ -65,10 +66,13 @@ console.log("this is banner data",bannerdata)
                   <div className="mr-35 relative ">
                     <div className="w-[500px] ">
 
-                    <img
+                    <SmartImage
                       className=" z-55 relative right-2"
                       src={el.image}
                       alt=""
+                      width={500}
+                      loading={index === 0 ? "eager" : "lazy"}
+                      fetchPriority={index === 0 ? "high" : undefined}
                     />
                     </div>
                     <div className="bg-[#ECD2FA59] h-[457px] w-[457px] rounded-full absolute top-8 right-0 "></div>

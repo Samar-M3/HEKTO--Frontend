@@ -1,33 +1,30 @@
 import React from "react";
-import truck from "../images/truck.png";
-import coin from "../images/coin.jpg";
-import twenty from "../images/24.jpg";
-import medal from "../images/medal.png";
+import { FaClock, FaHeadset, FaMedal, FaTruck } from "react-icons/fa";
 
 const offer_data = [
   {
     title: "24/7 Support",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa purus gravida.",
-    image: truck,
+    icon: FaHeadset,
   },
   {
     title: "24/7 Support",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa purus gravida.",
-    image: coin,
+    icon: FaTruck,
   },
   {
     title: "24/7 Support",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa purus gravida.",
-    image: twenty,
+    icon: FaClock,
   },
   {
     title: "24/7 Support",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa purus gravida.",
-    image: medal,
+    icon: FaMedal,
   },
 ];
 
@@ -39,11 +36,14 @@ function Shopex_Offer() {
         <div className="flex justify-center gap-9 ">
 
         {offer_data.map((el) => {
+          const Icon = el.icon;
           return (
             <div className="mt-6">
               <div className="h-70 w-[270px] shadow-lg ">
                 <div className="h-[px] flex justify-center">
-                  <img className="h-[150px]" src={el.image} alt="" />
+                  <div className="h-[150px] flex items-center justify-center">
+                    <Icon className="h-18 w-18 text-[#FB2E86]" aria-hidden="true" />
+                  </div>
                 </div>
                 <div className="text-center mt-4 font-bold">
                   <p>{el.title}</p>

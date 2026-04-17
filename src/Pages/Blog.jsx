@@ -12,6 +12,7 @@ import sale2 from "../images/sale2.jpg";
 import sale3 from "../images/sale3.jpg";
 import { FaFacebook, FaFacebookF } from "react-icons/fa6";
 import { CiInstagram } from "react-icons/ci";
+import SmartImage from "../Components/SmartImage";
 // import sale4 from "../images/sale4.jpg"
 const recenetpost = [
   {
@@ -80,10 +81,13 @@ function Blog() {
             <div className=" ">
               <div className="">
                 <div className=" p-3 mt-10 w-[800px] ">
-                  <img
+                  <SmartImage
                     className="h-[453px] w-[870px]"
                     src={el.image}
                     alt="blogimage"
+                    width={870}
+                    height={453}
+                    crop="fill"
                   />
                   <div className="flex gap-8 mt-5">
                     <div className="flex gap-3 items-center ">

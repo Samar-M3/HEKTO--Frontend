@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import BaseUrl from "../constant";
 import { BsPenFill } from "react-icons/bs";
 import { SlCalender } from "react-icons/sl";
+import SmartImage from "../Components/SmartImage";
 
 function Latest_Blog() {
   const [blogdata, setblogdata] = useState([]);
@@ -34,7 +35,13 @@ function Latest_Blog() {
         return (
               <div className="h-[453px] w-[370px] group hover:transform hover:scale-101 transition-all shadow-lg rounded-2xl">
                 <div className="overflow-hidden">
-                  <img className="group-hover:scale-110 object-cover transition-all" src={el.image}alt="image" />
+                  <SmartImage
+                    className="group-hover:scale-110 object-cover transition-all w-full"
+                    src={el.image}
+                    alt="image"
+                    width={370}
+                    crop="limit"
+                  />
                 </div>
                 <div className="flex gap-7 my-3 mx-3 ">
                   <div className="flex items-center gap-1.5">

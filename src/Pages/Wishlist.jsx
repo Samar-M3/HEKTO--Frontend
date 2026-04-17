@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import BaseUrl from "../constant";
 import { useNavigate } from "react-router";
 import { usecart } from "../hooks/CartContext";
+import SmartImage from "../Components/SmartImage";
 
 function Wishlist() {
   const [wishlist, setWishlist] = useState([]);
@@ -95,10 +96,13 @@ function Wishlist() {
               
               {/* Product Image */}
               <div className="relative aspect-square overflow-hidden bg-gray-100">
-                <img 
+                <SmartImage 
                   src={product.image} 
                   alt={product.title} 
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  width={420}
+                  height={420}
+                  crop="fill"
                 />
                 {product.sections?.bestSeller && (
                   <span className="absolute top-2 left-2 bg-yellow-400 text-xs font-bold px-2 py-1 rounded">

@@ -7,6 +7,7 @@ import { BiHeart } from "react-icons/bi";
 import { usecart } from "../hooks/CartContext";
 import axios from "axios";
 import { toast } from "react-toastify";
+import SmartImage from "../Components/SmartImage";
 
 function DetailPage() {
   const { id } = useParams();
@@ -70,10 +71,15 @@ function DetailPage() {
         <div className="h-[600px] flex items-center justify-center  ">
           <section className="flex mt-15 p-10 shadow-lg">
             <div className="bg-[#fffcfc] p-3">
-              <img
+              <SmartImage
                 className="h-[447px] w-[500px] p-3 "
                 src={productDetails.image}
                 alt=""
+                width={500}
+                height={447}
+                crop="fit"
+                loading="eager"
+                fetchPriority="high"
               />
             </div>
 

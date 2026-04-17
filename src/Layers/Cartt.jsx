@@ -3,6 +3,7 @@ import { usecart } from "../hooks/CartContext";
 import BreadCrumb from "../hooks/BreadCrumb";
 import { toast } from "react-toastify";
   import { loadStripe } from "@stripe/stripe-js";
+import SmartImage from "../Components/SmartImage";
 
 function Cartt() {
   const { cart, removecart, updateQuantity } = usecart();
@@ -66,10 +67,13 @@ const handleCheckout = async () => {
         return (
           <div key={el._id} className="grid grid-cols-6 items-center py-4 border-b">
             <div className="col-span-2 flex gap-4 items-center">
-              <img
+              <SmartImage
                 src={el.image}
                 alt={el.title}
                 className="w-20 h-20 object-cover rounded"
+                width={80}
+                height={80}
+                crop="fill"
               />
               <h2 className="font-semibold">{el.title}</h2>
             </div>
